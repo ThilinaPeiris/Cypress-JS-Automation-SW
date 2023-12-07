@@ -1,5 +1,4 @@
 
-
 Cypress.Commands.add('checkIfExist', (element) => {
     cy.get('body').then((body) => {
         cy.wait(5000).then(() => {
