@@ -7,7 +7,7 @@ Cypress configuration :
   npm i -D mochawesome mochawesome-merge mochawesome-report-generator
 
   In the cypress.config.js add the reporter settings :
-  ```json
+  ```js
   const { defineConfig } = require("cypress");
   module.exports = defineConfig({
     reporter: 'mochawesome',
