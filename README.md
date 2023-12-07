@@ -4,7 +4,9 @@ Cypress-JS-Automation-SW
 Used Mochawesome HTML Reports :
 Cypress configuration :
   Run the below command in terminal:
+  ```console
   npm i -D mochawesome mochawesome-merge mochawesome-report-generator
+  ```
 
   In the cypress.config.js add the reporter settings :
   ```js
