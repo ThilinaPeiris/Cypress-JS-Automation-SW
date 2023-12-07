@@ -3,10 +3,10 @@
 describe('Amazon Shopping Cart Test', () => {
 
   beforeEach(() => {
-    cy.visit('https://www.amazon.com/');
+    cy.visit('/');
   })
 
-  it('Verify Product List Name And Product Details Name Is Equal.', () => {
+  it('Verify Product List Name And Product Details Name Is Equal', () => {
 
     cy.selectSearchCategory('Books');
     cy.searchProduct("Automation");
@@ -24,7 +24,7 @@ describe('Amazon Shopping Cart Test', () => {
       });
   })
 
-  it.only('Verify that Cart Details are accurate.', () => {
+  it('Verify that Cart Details are accurate', () => {
 
     cy.selectSearchCategory('Books');
     cy.searchProduct("Automation");
@@ -65,6 +65,7 @@ describe('Amazon Shopping Cart Test', () => {
                 ProductPriceInDetailsPage = ProductPriceInDetailsPage.trim().toLocaleLowerCase()
                 expect(productPrice).equal(ProductPriceInDetailsPage);
               });
+
             cy.get("span[id='sc-subtotal-amount-buybox'] span").invoke('text').should('contain', subTotalInDetailsPage);
             cy.get("#sc-subtotal-label-buybox").invoke('text').should('contain', "2 item");
 
