@@ -4,6 +4,7 @@ describe('Amazon Shopping Cart Test', () => {
 
   beforeEach(() => {
     cy.visit('/');
+    cy.checkIfExist("a[aria-label='Open Menu']");
   })
 
   it('Verify Product List Name And Product Details Name Is Equal', () => {
@@ -36,7 +37,7 @@ describe('Amazon Shopping Cart Test', () => {
       .invoke('text')
       .then((productTitleInDetailsPage) => {
 
-        cy.get('li span a.a-button-text > span ').contains('Paperback').click();
+        cy.get('li span a.a-button-text > span ').contains('Paperback').click({ force: true });
 
         cy.get("li span a.a-button-text > span span.a-color-price")
           .invoke('text')

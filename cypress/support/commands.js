@@ -1,11 +1,17 @@
 
 
-    // cy.get('#searchDropdownBox').select('Books', { force: true });
-    // cy.get('#twotabsearchtextbox').type('Automation{Enter}');
-    // cy.get('.a-list-item > .a-link-normal > section').eq(0).click();
-    // cy.get('li[aria-label="English"] span  a div + span').click();
-    // cy.get("div[data-index='3'] h2 a > span")
-    //   .invoke('text')
+Cypress.Commands.add('checkIfExist', (element) => {
+    cy.get('body').then((body) => {
+        cy.wait(5000).then(() => {
+            if (body.find(element).length > 0) {
+                cy.log('Element found, proceeding with test');
+            } else {
+                cy.log('Element not found, reload the home page');
+                cy.visit('/');
+            }
+        })
+    })
+})
 
 Cypress.Commands.add('selectSearchCategory', (category) => {
     cy.get('#searchDropdownBox')
