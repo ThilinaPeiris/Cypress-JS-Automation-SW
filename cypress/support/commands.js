@@ -1,7 +1,7 @@
 
 Cypress.Commands.add('checkIfExist', (element) => {
     cy.get('body').then((body) => {
-        cy.wait(5000).then(() => {
+        cy.then(() => {
             if (body.find(element).length > 0) {
                 cy.log('Element found, proceeding with test');
             } else {
